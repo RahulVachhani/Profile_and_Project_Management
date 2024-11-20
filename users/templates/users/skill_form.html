@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% block title %}Add Skill{% endblock title %}
+
+{% block content %}
+
+
+<main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+        
+            <br>
+             <h3>Add Skill</h3>
+            <form action={% url 'skill_form' %} method="post">
+                {% csrf_token %}
+                {% for field in form  %}
+                <!-- Input:Text -->
+                <div class="form__field">
+                    <label for="formInput#text">Skill {{field.label}} </label>
+                    {{field}}
+            
+                </div>
+                {% endfor %}
+
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

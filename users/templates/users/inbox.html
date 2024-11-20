@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+
+{% block title %}Message Inbox{% endblock title %}
+
+{% block content %}
+
+<main class="inbox my-xl">
+    <div class="content-box">
+      <h3 class="inbox__title">New Messages(<span>{{countUnRead}}</span>)</h3>
+      <ul class="messages">
+        {% for message in Relatedmessages %}
+        {% if message.is_read %}
+        <li class="message">
+        {% else %}
+        <li class="message message--unread">
+        {% endif %}
+          <a href="{% url 'message' message.id %}">
+            <span class="message__author">{{message.sender}}</span>
+            <span class="message__subject">{{message.subject}}</span>
+            <span class="message__date">{{message.created}}</span>
+          </a>
+        </li>
+        {% endfor %}
+        {% comment %} 
+       
+          <a href="message.html">
+            <span class="message__author">Md. Shahriar Parvez</span>
+            <span class="message__subject">Up for a Freelancing Project?</span>
+            <span class="message__date">May 30, 2021, 07:47 PM</span>
+          </a>
+        </li>
+        <li class="message">
+          <a href="message.html">
+            <span class="message__author">Sulamita Ivanov</span>
+            <span class="message__subject">Another Opportunity for Side Income</span>
+            <span class="message__date">May 29, 2021, 09:45 AM</span>
+          </a>
+        </li> {% endcomment %}
+      </ul>
+    </div>
+  </main>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% block title %}Update Skill{% endblock title %}
+
+{% block content %}
+
+<div class="content-box">
+    <div class="formWrapper">
+        <h1>Update Skill</h1>
+<form action={% url 'update_skill_form' pk %} method="post">
+    {% csrf_token %}
+    {% for field in form  %}
+    <div class="form__field">
+        <label for="formInput#text">Skill {{field.label}} </label>
+        {{field}}
+
+    </div>
+    {% endfor %}
+    <div class="auth__actions">
+        <input class="btn btn--sub btn--lg" type="submit" value="Save" />
+      </div>
+</form>
+</div>
+</div>
+
+{% endblock content %}
