@@ -1,23 +1,7 @@
 {% extends "main.html" %}
 {% block title %}{{project.title}}{% endblock title %}
 {% block content %}
-{% comment %} 
-<h1>{{project.title}}</h1>
-<hr />
-<img src={{project.image.url}} style="max-width:300px;" alt=""><br>
-<span><strong>Technology : </strong></span>
 
-    {% for tag in tags %}
-        <span style="border: 1px solid gray; margin-left: 5px">{{tag.name}} </span>
-    {% endfor %}
-
-<hr />
-<p>Discription : {{project.discription}}</p>
-<p>Reviews :</p>
-
-    {% for review in reviews %}
-        <p>{{forloop.counter0}} : {{review.body}}</p>
-    {% endfor %} {% endcomment %}
 
     <main class="singleProject my-md">
         <div class="container">
