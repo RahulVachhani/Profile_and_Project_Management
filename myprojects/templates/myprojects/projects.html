@@ -82,7 +82,7 @@
           <li><a href="?page={{page|add:'1'}}" class="btn btn--sub">{{forloop.counter}}</a></li>
           {% endfor %}
           {% if projects.has_next %}       
-          <li><a href="?page={{next_page_number}}" class="btn">Next &#10095;</a></li>
+          <li><a href="?page={{projects.next_page_number}}" class="btn">Next &#10095;</a></li>
           {% endif %}
         </ul>
         {% endif %}

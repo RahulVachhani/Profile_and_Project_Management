@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fr5$xsve#p9636)_lu*9jk!n+$h2&t_k4@u!4da)hxphk3-16e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,7 +136,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Mainproject',  # Replace with your database name
+#         'USER': 'root',  # Replace with your MySQL username
+#         'PASSWORD': 'admin@1234',  # Replace with your MySQL password
+#         'HOST': 'localhost',  # Use 'localhost' if MySQL is on the same machine
+#         'PORT': '3306',  # Default MySQL port
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -177,10 +187,12 @@ STATICFILES_DIRS = [BASE_DIR/'static']
 
 
 # MEDIA PATHS 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
-MEDIA_URL = 'images/'
+# MEDIA_URL = 'images/'
 
-MEDIA_ROOT = BASE_DIR/'static/images'
+# MEDIA_ROOT = BASE_DIR/'static/images'
 
 # FOR PRODUCTION DEPLOYEMENT
 
@@ -197,3 +209,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'django.learning.testing@gmail.com'
+EMAIL_HOST_PASSWORD = 'ispoojkxpnaspwyz'

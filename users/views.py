@@ -109,7 +109,7 @@ def edit_account_form(request):
 @login_required(login_url='login')
 def skill_form(request):
     profile = request.user.profile
-
+    print('profile', profile)
     form = SkillForm()
 
     if request.method == 'POST':
