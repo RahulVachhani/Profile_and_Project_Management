@@ -5,3 +5,4 @@ pillow
 djangorestframework
 djangorestframework-simplejwt
 gunicorn
+mysqlclient
