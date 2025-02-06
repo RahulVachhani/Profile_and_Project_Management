@@ -140,9 +140,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Mainproject',  # Replace with your database name
-        'USER': 'root',  # Replace with your MySQL username
+        'USER': 'Rahul1211',  # Replace with your MySQL username
         'PASSWORD': 'admin@1234',  # Replace with your MySQL password
-        'HOST': 'localhost',  # Use 'localhost' if MySQL is on the same machine
+        'HOST': 'Rahul1211.mysql.pythonanywhere-services.com',  # Use 'localhost' if MySQL is on the same machine
         'PORT': '3306',  # Default MySQL port
     }
 }
