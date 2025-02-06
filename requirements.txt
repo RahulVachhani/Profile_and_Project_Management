@@ -1,6 +1,6 @@
 django
 whitenoise
-corsheaders
+django-cors-headers
 pillow
 djangorestframework
 djangorestframework-simplejwt
