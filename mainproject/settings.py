@@ -130,22 +130,22 @@ WSGI_APPLICATION = 'mainproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'Mainproject',  # Replace with your database name
-#         'USER': 'root',  # Replace with your MySQL username
-#         'PASSWORD': 'admin@1234',  # Replace with your MySQL password
-#         'HOST': 'localhost',  # Use 'localhost' if MySQL is on the same machine
-#         'PORT': '3306',  # Default MySQL port
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Mainproject',  # Replace with your database name
+        'USER': 'root',  # Replace with your MySQL username
+        'PASSWORD': 'admin@1234',  # Replace with your MySQL password
+        'HOST': 'localhost',  # Use 'localhost' if MySQL is on the same machine
+        'PORT': '3306',  # Default MySQL port
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
