@@ -145,10 +145,11 @@ DATABASES = {
         'PASSWORD': 'YAzsPcVucTrnsgoEOfZGcUFTTyQmXdtm',  # Replace with your MySQL password
         'HOST': 'mysql-nevi.railway.internal',  # Use 'localhost' if MySQL is on the same machine
         'PORT': '3306',
-          'default': dj_database_url.config(default='mysql://root:YAzsPcVucTrnsgoEOfZGcUFTTyQmXdtm@mysql-nevi.railway.internal:3306/railway')  # Default MySQL port
+           
     }
 }
 
+DATABASES['default'] = dj_database_url.config(default='mysql://root:YAzsPcVucTrnsgoEOfZGcUFTTyQmXdtm@mysql-nevi.railway.internal:3306/railway', conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
