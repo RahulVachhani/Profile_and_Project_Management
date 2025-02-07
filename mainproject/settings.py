@@ -139,10 +139,10 @@ WSGI_APPLICATION = 'mainproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Mainproject',  # Replace with your database name
-        'USER': 'Rahul1211',  # Replace with your MySQL username
-        'PASSWORD': 'admin@1234',  # Replace with your MySQL password
-        'HOST': 'Rahul1211.mysql.pythonanywhere-services.com',  # Use 'localhost' if MySQL is on the same machine
+        'NAME': 'railway',  # Replace with your database name
+        'USER': 'root',  # Replace with your MySQL username
+        'PASSWORD': 'kvgDNzSlXlVVONvfGaQVFJJemWwfsuUQ',  # Replace with your MySQL password
+        'HOST': 'mysql.railway.internal',  # Use 'localhost' if MySQL is on the same machine
         'PORT': '3306',  # Default MySQL port
     }
 }
