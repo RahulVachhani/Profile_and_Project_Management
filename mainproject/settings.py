@@ -136,16 +136,19 @@ WSGI_APPLICATION = 'mainproject.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+import dj_database_url
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',  # Replace with your database name
         'USER': 'root',  # Replace with your MySQL username
-        'PASSWORD': 'hXMAKhckIgHvYBPtSWXWFaSreTkQSSMm',  # Replace with your MySQL password
-        'HOST': 'mysql.railway.internal',  # Use 'localhost' if MySQL is on the same machine
-        'PORT': '3306',  # Default MySQL port
+        'PASSWORD': 'YAzsPcVucTrnsgoEOfZGcUFTTyQmXdtm',  # Replace with your MySQL password
+        'HOST': 'mysql-nevi.railway.internal',  # Use 'localhost' if MySQL is on the same machine
+        'PORT': '3306',
+          'default': dj_database_url.config(default='mysql://root:YAzsPcVucTrnsgoEOfZGcUFTTyQmXdtm@mysql-nevi.railway.internal:3306/railway')  # Default MySQL port
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

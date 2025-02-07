@@ -6,3 +6,4 @@ djangorestframework
 djangorestframework-simplejwt
 gunicorn
 mysqlclient
+dj_database_url
