@@ -8,7 +8,7 @@
     <div class="content-box">
       <h3 class="inbox__title">New Messages(<span>{{countUnRead}}</span>)</h3>
       <ul class="messages">
-        {% for message in Relatedmessages %}
+        {% for message in msg %}
         {% if message.is_read %}
         <li class="message">
         {% else %}
@@ -23,6 +23,21 @@
         {% endfor %}
        
       </ul>
+      <div class="pagination">
+        {% if msg.has_other_pages %}
+        <ul class="container">
+          {% if msg.has_previous %}
+          <li><a href="?page={{msg.previous_page_number}}"  class="btn btn--sub">&#10094; Prev</a></li>
+          {% endif %}
+          {% for page in total_page %}
+          <li><a href="?page={{page|add:'1'}}" class="btn btn--sub">{{forloop.counter}}</a></li>
+          {% endfor %}
+          {% if msg.has_next %}       
+          <li><a href="?page={{msg.next_page_number}}" class="btn">Next &#10095;</a></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+      </div>
     </div>
   </main>
 

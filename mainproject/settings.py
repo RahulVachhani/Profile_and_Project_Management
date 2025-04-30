@@ -138,17 +138,6 @@ DATABASES = {
 }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'railway',  # Replace with your database name
-#         'USER': 'root',  # Replace with your MySQL username
-#         'PASSWORD': 'YAzsPcVucTrnsgoEOfZGcUFTTyQmXdtm',  # Replace with your MySQL password
-#         'HOST': 'mysql-nevi.railway.internal',  # Use 'localhost' if MySQL is on the same machine
-#         'PORT': '3306',
-           
-#     }
-# }
 
 
 # Password validation

@@ -7,6 +7,7 @@ from .forms import CustomUserCreationForm, ProfileForm, SkillForm, MessageForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.urls import reverse
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
 
@@ -156,9 +157,26 @@ def inbox(request):
     profile = request.user.profile
     Relatedmessages = profile.messages.all()
     countUnRead = Relatedmessages.filter(is_read = False).count()
+    page = request.GET.get('page')
+    result = 5
+
+    paginator = Paginator(Relatedmessages,result)
+    
+    try:
+        msg = paginator.page(page)
+    except PageNotAnInteger:
+        page = 1
+        msg = paginator.page(page)
+    except EmptyPage:
+        page = paginator.num_pages
+        msg = paginator.page(page)
+
+    total_page = range(paginator.num_pages)
     data = {
         'Relatedmessages':Relatedmessages,
-        'countUnRead':countUnRead
+        'countUnRead':countUnRead,
+        'msg': msg,
+        'total_page':total_page
     }
     return render(request, 'users/inbox.html', data)
 
@@ -186,6 +204,8 @@ def create_message(request,pk):
             msg = form.save(commit=False)
             msg.sender = request.user.profile
             msg.receiver = receiver
+            msg.name = request.user.profile.name
+            msg.email = request.user.profile.email
             msg.save()
             messages.success(request, 'Message sent succesfully')
             return redirect('profile', pk=receiver.id)
